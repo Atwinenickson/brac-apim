@@ -10,7 +10,7 @@ pipeline {
         stage('Preparation') {
             steps{
                 git branch: "master",
-                url: 'http://192.168.0.82:4000/nickson/nita-mtn-push.git',
+                url: 'https://github.com/Atwinenickson/brac-apim.git',
                 credentialsId: 'root'
             }
         }
@@ -22,7 +22,7 @@ pipeline {
              echo 'Create a dev environment'
                 sh '${CTL_HOME} list envs'
                 sh '${CTL_HOME} remove env  dev'
-                sh '${CTL_HOME} add-env -e  $DEV_ENV --apim https://192.168.0.113:9443'
+                sh '${CTL_HOME} add-env -e  $DEV_ENV --apim https://localhost:9444'
                 echo '--------------------Logging into $DEV_ENV----------------'
 				withCredentials([usernamePassword(credentialsId: 'apim_dev', usernameVariable: 'DEV_USERNAME', passwordVariable: 'DEV_PASSWORD')]) {
                     sh '${CTL_HOME} login $DEV_ENV -u $DEV_USERNAME -p $DEV_PASSWORD -k'                        

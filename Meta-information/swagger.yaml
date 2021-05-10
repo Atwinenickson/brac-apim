@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: BracAPI
+  title: BracAPIM
   version: 1.0.0
 servers:
  -
@@ -107,7 +107,7 @@ x-wso2-sandbox-endpoints:
   urls:
    - ' http://ei.dev.bracbank.local/mtn-push-pull-api/v1'
   type: http
-x-wso2-basePath: /bracapi/1.0.0
+x-wso2-basePath: /bracapim/1.0.0
 x-wso2-transports:
  - http
  - https

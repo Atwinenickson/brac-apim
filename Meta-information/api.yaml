@@ -1,12 +1,12 @@
 id:
   providerName: admin
-  apiName: BracAPI
+  apiName: BracAPIM
   version: 1.0.0
   id: 0
 uuid: f873948c-5842-42f7-95b6-8b6bb0a36de0
 type: HTTP
-context: /bracapi/1.0.0
-contextTemplate: /bracapi/{version}
+context: /bracapim/1.0.0
+contextTemplate: /bracapim/{version}
 tags: []
 documents: []
 lastUpdated: May 10, 2021 11:50:07 AM

@@ -21,7 +21,7 @@ pipeline {
             steps {
              echo 'Create a dev environment'
                 sh '/home/atwine/Pictures/apictl/apictl list envs'
-                sh '/home/atwine/Pictures/apictl/apictlremove env  dev'
+                sh '/home/atwine/Pictures/apictl/apictl remove env  dev'
                 sh '/home/atwine/Pictures/apictl/apictl add-env -e  $DEV_ENV --apim https://localhost:9444'
                 echo '--------------------Logging into $DEV_ENV----------------'
 				withCredentials([usernamePassword(credentialsId: 'apim_dev', usernameVariable: 'DEV_USERNAME', passwordVariable: 'DEV_PASSWORD')]) {

@@ -20,6 +20,7 @@ pipeline {
             }
             steps {
              echo 'Create a dev environment'
+             sh '/home/atwine/Pictures/apictl/apictl version'
                 sh '/home/atwine/Pictures/apictl/apictl list envs'
                 sh '/home/atwine/Pictures/apictl/apictl remove env  dev'
                 sh '/home/atwine/Pictures/apictl/apictl add-env -e  $DEV_ENV --apim https://localhost:9444'

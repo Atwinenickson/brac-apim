@@ -20,15 +20,15 @@ pipeline {
             }
             steps {
              echo 'Create a dev environment'
-                sh '${CTL_HOME} list envs'
-                sh '${CTL_HOME} remove env  dev'
-                sh '${CTL_HOME} add-env -e  $DEV_ENV --apim https://localhost:9444'
+                sh '/home/atwine/Pictures/apictl/apictl list envs'
+                sh '/home/atwine/Pictures/apictl/apictlremove env  dev'
+                sh '/home/atwine/Pictures/apictl/apictl add-env -e  $DEV_ENV --apim https://localhost:9444'
                 echo '--------------------Logging into $DEV_ENV----------------'
 				withCredentials([usernamePassword(credentialsId: 'apim_dev', usernameVariable: 'DEV_USERNAME', passwordVariable: 'DEV_PASSWORD')]) {
-                    sh '${CTL_HOME} login $DEV_ENV -u $DEV_USERNAME -p $DEV_PASSWORD -k'                        
+                    sh '/home/atwine/Pictures/apictl/apictl login $DEV_ENV -u $DEV_USERNAME -p $DEV_PASSWORD -k'                        
                 }   
                 echo '------------------------Deploying to $DEV_ENV-----------------------'
-                sh '${CTL_HOME} import-api -f $API_DIR -e $DEV_ENV -k --preserve-provider --update --verbose'
+                sh '/home/atwine/Pictures/apictl/apictl import-api -f $API_DIR -e $DEV_ENV -k --preserve-provider --update --verbose'
             }
         }
     }

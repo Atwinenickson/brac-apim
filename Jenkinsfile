@@ -3,7 +3,7 @@ pipeline {
     tools {nodejs "Node"}
     environment {
         CI = 'true'
-        API_DIR = '/var/jenkins_home/workspace/NITAMTNDeployment'
+        API_DIR = '/var/jenkins_home/workspace/BRAC'
         DEV_ENV = 'dev'
     }
     stages {
